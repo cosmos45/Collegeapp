@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+     <h2>These are sample Resumes</h2>
+     <a href="{% url 'resume:temp1' %}">
+     <img src="{% static 'images/sample.jpg' %}" alt="Uh Oh" width="200" height="300" class="temp1">
+     </a>
+     <a href="{% url 'resume:resume_with_image' %}">
+          <button type="submit">Without Image</button>
+     </a>
+
+{% endblock %}

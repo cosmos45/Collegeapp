@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="{% static 'js/linkin.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="{% static 'css/master.css' %}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+</head>
+<body class="it">
+<nav class="navbar mynav" id="navbar" role="navigation">
+    <div class="container">
+        <a class="navbar-brand mynav" href="{% url 'home' %}">Resume Builder</a>
+
+
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'resume' %}" class="btn btn-simple">Resume</a></li>
+            <li><a href="#" class="btn btn-simple">CV</a></li>
+            <li><a href="#" class="btn btn-simple">Visiting card</a></li>
+            <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'resume:resume' %}" class="btn btn-simple">Resume</a></li>
+            <li><a href="#" class="btn btn-simple">CV</a></li>
+            <li><a href="#" class="btn btn-simple">Visiting card</a></li>
+            <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Login</a></li>
+            <li><a href="{% url 'accounts:register' %}" class="btn btn-simple">Register</a></li>
+            {% endif%}
+        </ul>
+    </div>
+</nav>
+
+
+    {% block content %}
+
+    {% endblock %}
+</div>
+</body>
+</html>

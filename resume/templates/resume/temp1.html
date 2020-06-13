@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="container-main">
+    <div class="container-content">
+        <h1>Resume Builder</h1>
+
+
+        <form method="post" action="{% url 'resume:temp1' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <input type="file" id="img" name="image">
+
+            <!--            <h2>Failed to Upload an Image!</h2>-->
+
+
+            <div class="form-group">
+                <br><br>
+                <h2>Name</h2><br>
+                <div class="form-row">
+                    <div class="form-group col-lg-6">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Your name ">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <h2>Experience/Projects</h2><br>
+            <div class="form-group" id="exp_text">
+                <!--              <textarea  name="experience" class="form-control" id="experience" rows="8" placeholder="Use '#' before the Title and '*' before it's description."></textarea>-->
+                <input type="text" name="experience" id="experience">
+            </div>
+
+
+            <br>
+            <button type="submit" class="btn btn-primary">Build Resume</button>
+
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
