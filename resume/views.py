@@ -62,10 +62,10 @@ def temp1(request):
         im2 = Image.open(fileurl)
         back_im = im1.copy()
         back_im.paste(im2)
-        saving = back_im.save('C:/Users/Admin/PycharmProject/Collegeapp/putem/' + filename + '.jpg', resolution=100.0,
+        saving = back_im.save('D:/pycharm/Collegeapp/putem' + filename + '.jpg', resolution=100.0,
                               quality=100)
 
-        tmp = Image.open('C:/Users/Admin/PycharmProject/Collegeapp/putem/' + filename + '.jpg')
+        tmp = Image.open('D:/pycharm/Collegeapp/putem' + filename + '.jpg')
         linedrw = ImageDraw.Draw(tmp)
         s_size = 15
         m_size = 22
@@ -113,8 +113,7 @@ def drawtext(text, size, nwords, x, y, fontcolor, print=0, path='arial.ttf'):
         y = y + h + 6
 
     if print:
-        tmp.show()
-        tmp.save('C:/Users/Admin/Downloads/' + str(data["name"].replace(" ", "")) + '.pdf', resolution=100.0,
+        tmp.save('C:/Users/DELL/Downloads/' + str(data["name"].replace(" ", "")) + '.pdf', resolution=100.0,
                  quality=100)
         # os.startfile('C:/Users/Admin/Downloads/' + str(data["name"].replace(" ", "")) + '.pdf')
     return x, y
