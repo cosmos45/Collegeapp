@@ -1,5 +1,69 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-     <h1>Welcome</h1>
+
+
+<div class="hero">
+<div id=container>
+  We make your
+  <div id=flip>
+    <div><div>Resume</div></div>
+    <div><div>Portfolio</div></div>
+    <div><div>Business Card</div></div>
+  </div>
+  with love.
+</div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="imgsize">
+            <img src="{% static 'images/background.jpg' %}" alt="">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="resume">
+            <p>Build your <span style="font-size: 90px;">RESUME</span>  with ease</p>
+        </div>
+        <button class="btn-grad">Click here</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="cv">
+            <p>Complete your personalised <span style="font-size: 80px;">curriculum vitae</span> </p>
+            <p> using our recruiter-approved samples</p>
+        </div>
+        <button class="btn-grad1" style="float:right;">Click here</button>
+    </div>
+    <div class="col-md-6">
+        <div class="imgsize">
+            <img src="{% static 'images/cv1.png' %}" alt="" width="60%">
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="imgsize">
+            <img src="{% static 'images/bc.png' %}" alt="" width="70%">
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="bc">
+            <p>Let us help you</p>
+            <p>design your </p>
+            <p><span style="font-size: 90px; line-height: 80px;">BUSINESS-CARDS</span> </p>
+        </div>
+        <button class="btn-grad2">Click here</button>
+    </div>
+</div>
+
+
+
+
 {% endblock %}

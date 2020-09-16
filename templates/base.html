@@ -9,40 +9,280 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <script src="{% static 'js/linkin.js' %}"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Rambla:wght@700&display=swap" rel="stylesheet">
     <link href="{% static 'css/master.css' %}" rel="stylesheet">
+    <script src="{% static 'js/linkin.js' %}"></script>
     <meta charset="UTF-8">
     <title>Home</title>
+    <script>
+  $(document).ready(function() {
+        $(window).scroll(function() {
+          if($(this).scrollTop() > 500) {
+              $('.navbar').addClass('solid');
+          } else {
+              $('.navbar').removeClass('solid');
+          }
+        });
+});
+    </script>
+    <style>
+  .navbar {
+  padding-top: 16px;
+  background-color: transparent;
+}
+ .navbar.solid {
+  padding-top: 16px;
+  background-color: red;
+  transition: background-color 1s ease 0s;
+}
 
+.nav-link {
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  line-height: 36px;
+  padding: 0 16px;
+
+
+}
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  position: relative;
+  color: #f4f4f4;
+  box-sizing: border-box;
+  position: relative;
+
+}
+
+.navbar-brand {
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #f4f4f4;
+  padding-top: 16px;
+  padding-left: 46px;
+
+}
+
+.hero {
+  height: 625px;
+  background: linear-gradient(to bottom left, #b12dfd, #22c1c3);
+  background-size: cover;
+  background-position: center;
+}
+
+
+body {
+  margin:0px;
+  font-family:Roboto, Helvetica Neue, sans-serif;
+  text-align:center;
+}
+
+#container {
+  color:white;
+  text-transform: uppercase;
+  font-size:36px;
+  font-weight:bold;
+  padding-top:200px;
+  width:100%;
+  bottom:35%;
+  display:block;
+}
+
+#flip {
+  height:50px;
+  overflow:hidden;
+  font-size: 72px;
+  line-height: 80px;
+  height:80px;
+}
+
+#flip > div > div {
+  color:#fff;
+  padding:4px 12px;
+  margin-bottom:40px;
+  display:inline-block;
+}
+
+#flip div:first-child {
+  animation: show 5s linear infinite;
+}
+
+#flip div div {
+  background:#42c58a;
+  height:80px;
+}
+#flip div:first-child div {
+  background:#4ec7f3;
+  height:80px;
+}
+#flip div:last-child div {
+  background:#DC143C;
+  height:80px;
+  margin-bottom: 5px;
+}
+
+@keyframes show {
+  0% {margin-top:-350px;}
+  5% {margin-top:-225px;}
+  33% {margin-top:-225px;}
+  38% {margin-top:-120px;}
+  66% {margin-top:-120px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-350px;}
+}
+
+a{
+text-decoration: none;
+color: white;
+}
+
+.imgsize{
+padding-top: 160px;
+padding-bottom: 70px;
+}
+
+.resume{
+padding-top: 160px;
+font-family: 'Rambla', sans-serif;
+font-size: 56px;
+text-align: left;
+line-height:70px;
+}
+
+.cv{
+padding-top: 140px;
+font-family: 'Rambla', sans-serif;
+font-size: 48px;
+text-align: right;
+line-height:60px;
+}
+
+.bc{
+padding-top: 200px;
+font-family: 'Rambla', sans-serif;
+font-size: 48px;
+text-align: left;
+line-height:40px;
+}
+
+
+.btn-grad {
+background: linear-gradient(45deg, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
+display: block;
+  height: 50px;
+  width: 186px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  border: 0px
+
+}
+
+.btn-grad1 {
+background: linear-gradient(45deg,  #FF4E50 0%, #F9D423 51%, #FF4E50 100%);
+display: block;
+  height: 50px;
+  width: 186px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  border: 0px
+
+}
+
+.btn-grad2 {
+background: linear-gradient(90deg, #780206 0%, #061161 51%, #780206 100%);
+display: block;
+  height: 50px;
+  width: 186px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  border: 0px
+
+}
+
+
+    </style>
 </head>
 <body class="it">
-<nav class="navbar mynav" id="navbar" role="navigation">
+
+
     <div class="container">
-        <a class="navbar-brand mynav" href="{% url 'home' %}">Resume Builder</a>
-
-
-        <ul class="nav navbar-nav navbar-right">
-            {% if user.is_authenticated %}
-            <li><a href="{% url 'resume' %}" class="btn btn-simple">Resume</a></li>
-            <li><a href="#" class="btn btn-simple">CV</a></li>
-            <li><a href="#" class="btn btn-simple">Visiting card</a></li>
-            <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Logout</a></li>
-            {% else %}
-            <li><a href="{% url 'resume:resume' %}" class="btn btn-simple">Resume</a></li>
-            <li><a href="#" class="btn btn-simple">CV</a></li>
-            <li><a href="#" class="btn btn-simple">Visiting card</a></li>
-            <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Login</a></li>
-            <li><a href="{% url 'accounts:register' %}" class="btn btn-simple">Register</a></li>
-            {% endif%}
-        </ul>
+<nav class="navbar navbar-dark navbar-fixed-top ">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'home' %}">Resume Builder</a>
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+          {% if user.is_authenticated %}
+        <li class="nav-link"><a  href="{% url 'home' %}">Home</a></li>
+        <li class="nav-link"><a  href="{% url 'resume:resume' %}">Resume</a></li>
+        <li class="nav-link"><a  href="{% url 'resume:resume' %}">CV</a></li>
+        <li class="nav-link"><a  href="{% url 'resume:resume' %}">Visiting Card</a></li>
+        <li class="nav-link"><a  href="{% url 'accounts:logout' %}">Logout</a></li>
+          {% else %}
+          <li class="nav-link"><a  href="{% url 'home' %}">Home</a></li>
+          <li class="nav-link"><a  href="{% url 'resume:resume' %}">Resume</a></li>
+        <li class="nav-link"><a  href="{% url 'resume:resume' %}">CV</a></li>
+        <li class="nav-link"><a  href="{% url 'resume:resume' %}">Visiting Card</a></li>
+        <li class="nav-link"><a  href="{% url 'accounts:login' %}">Login</a></li>
+        <li class="nav-link"><a  href="{% url 'accounts:register' %}">Register</a></li>
+          {% endif%}
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
 </nav>
+    </div>
+
 
 
     {% block content %}
 
     {% endblock %}
-</div>
+
 </body>
 </html>
