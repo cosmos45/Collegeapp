@@ -1,13 +1,89 @@
 {% extends "base.html" %}
 {% load static %}
+
+
+{% block head %}
+<head>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Rambla:wght@700&display=swap" rel="stylesheet">
+    <style>
+      .navbar {
+            padding-top: 16px;
+            background: linear-gradient(180deg, #16222A 0%, #3A6073 100%);
+            background:color: red;
+      }
+
+
+       .nav-link {
+          font-family: Roboto, Helvetica Neue, sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          color: white;
+          line-height: 36px;
+          padding: 0 16px;
+
+       }
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  position: relative;
+  color: #f4f4f4;
+  box-sizing: border-box;
+  position: relative;
+
+}
+
+.navbar-brand {
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #f4f4f4;
+  padding-top: 16px;
+  padding-left: 46px;
+
+}
+
+body {
+  margin:0px;
+  font-family:Roboto, Helvetica Neue, sans-serif;
+}
+
+.part{
+padding-top: 140px;
+font-family: 'Rambla', sans-serif;
+font-size: 48px;
+text-align: left;
+line-height:40px;
+}
+
+    </style>
+</head>
+
+{% endblock %}
+
 {% block content %}
 
-     <h2>These are sample Resumes</h2>
-     <a href="{% url 'resume:temp1' %}">
-     <img src="{% static 'images/sample.jpg' %}" alt="Uh Oh" width="200" height="300" class="temp1">
-     </a>
-     <a href="{% url 'resume:resume_with_image' %}">
-          <button type="submit">Without Image</button>
-     </a>
+<p class="part">These are sample Resumes</p>
+<a href="{% url 'resume:temp1' %}">
+    <img src="{% static 'images/sample.jpg' %}" alt="Uh Oh" width="200" height="300" class="temp1">
+</a>
+<a href="{% url 'resume:resume_with_image' %}">
+    <button type="submit">Without Image</button>
+</a>
 
 {% endblock %}

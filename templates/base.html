@@ -2,6 +2,7 @@
 {% load static %}
 <html lang="en">
 <head>
+    {% block head %}
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -20,30 +21,36 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Rambla:wght@700&display=swap" rel="stylesheet">
-    <link href="{% static 'css/master.css' %}" rel="stylesheet">
-    <script src="{% static 'js/linkin.js' %}"></script>
     <meta charset="UTF-8">
     <title>Home</title>
     <script>
-  $(document).ready(function() {
-        $(window).scroll(function() {
-          if($(this).scrollTop() > 500) {
-              $('.navbar').addClass('solid');
-          } else {
-              $('.navbar').removeClass('solid');
-          }
-        });
-});
+        window.onscroll = function () {
+  navBarSolid();
+};
+
+function navBarSolid() {
+  const navbar = document.getElementById("navbar-top");
+  if (document.documentElement.scrollTop > 550) {
+    navbar.classList.add("bg-dark");
+  }
+  else {
+    navbar.classList.remove("bg-dark");
+  }
+}
+
     </script>
     <style>
   .navbar {
   padding-top: 16px;
-  background-color: transparent;
 }
- .navbar.solid {
-  padding-top: 16px;
-  background-color: red;
-  transition: background-color 1s ease 0s;
+
+#navbar-top {
+  transition: background-color 0.5s ease 0s;
+}
+.bg-dark {
+  box-shadow: 0 0 1px #333;
+  border-style: none;
+  background: linear-gradient(180deg, #16222A 0%, #3A6073 100%);
 }
 
 .nav-link {
@@ -151,12 +158,12 @@ color: white;
 }
 
 .imgsize{
-padding-top: 160px;
+padding-top: 100px;
 padding-bottom: 70px;
 }
 
 .resume{
-padding-top: 160px;
+padding-top: 100px;
 font-family: 'Rambla', sans-serif;
 font-size: 56px;
 text-align: left;
@@ -164,7 +171,7 @@ line-height:70px;
 }
 
 .cv{
-padding-top: 140px;
+padding-top: 80px;
 font-family: 'Rambla', sans-serif;
 font-size: 48px;
 text-align: right;
@@ -172,7 +179,7 @@ line-height:60px;
 }
 
 .bc{
-padding-top: 200px;
+padding-top: 140px;
 font-family: 'Rambla', sans-serif;
 font-size: 48px;
 text-align: left;
@@ -233,12 +240,14 @@ display: block;
 
 
     </style>
+
 </head>
+{% endblock %}
 <body class="it">
 
 
     <div class="container">
-<nav class="navbar navbar-dark navbar-fixed-top ">
+<nav id="navbar-top" class="navbar navbar-dark navbar-fixed-top ">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
